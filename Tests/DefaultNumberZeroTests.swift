@@ -14,7 +14,9 @@ class DefaultNumberZeroTests: XCTestCase {
         @DefaultNumberZero var float: Float
         @DefaultNumberZero var float32: Float32
         @DefaultNumberZero var float64: Float64
+        #if !os(Linux)
         @DefaultNumberZero var cgfloat: CGFloat
+        #endif
         @DefaultNumberZero var double: Double
     }
 
@@ -49,7 +51,9 @@ class DefaultNumberZeroTests: XCTestCase {
         XCTAssertEqual(fixture.float, 0)
         XCTAssertEqual(fixture.float32, 0)
         XCTAssertEqual(fixture.float64, 0)
+        #if !os(Linux)
         XCTAssertEqual(fixture.cgfloat, 0)
+        #endif
         XCTAssertEqual(fixture.double, 0)
     }
 
