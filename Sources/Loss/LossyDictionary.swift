@@ -39,6 +39,7 @@ extension LossyDictionary: Decodable where Key: Decodable, Value: Decodable {
         }
     }
 
+    // swiftlint:disable force_cast
     public init(from decoder: Decoder) throws {
         var elements: [Key: Value] = [:]
         if Key.self == String.self {
@@ -85,6 +86,7 @@ extension LossyDictionary: Decodable where Key: Decodable, Value: Decodable {
 
         wrappedValue = elements
     }
+    // swiftlint:enable force_cast
 }
 
 extension LossyDictionary: Encodable where Key: Encodable, Value: Encodable {

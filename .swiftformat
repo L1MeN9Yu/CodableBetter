@@ -7,4 +7,5 @@
 --stripunusedargs closure-only
 --disable andOperator
 --patternlet inline
---swiftversion 5.2
+--swiftversion 5.5
+--disable wrapMultilineStatementBraces

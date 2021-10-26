@@ -57,7 +57,7 @@ public extension KeyedDecodingContainer {
         } catch {
             guard let decodingError = error as? DecodingError,
                   case .typeMismatch = decodingError
-                else {
+            else {
                 return DefaultCodable(wrappedValue: P.defaultValue)
             }
             if let intValue = try? decodeIfPresent(Int.self, forKey: key),

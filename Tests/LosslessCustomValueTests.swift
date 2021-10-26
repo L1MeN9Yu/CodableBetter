@@ -4,10 +4,10 @@ import XCTest
 struct MyLosslessStrategy<Value: LosslessStringCodable>: LosslessDecodingStrategy {
     static var losslessDecodableTypes: [(Decoder) -> LosslessStringCodable?] {
         [
-            { try? String(from: $0) },
-            { try? Bool(from: $0) },
-            { try? Int(from: $0) },
-            { _ in 42 },
+            ({ try? String(from: $0) }),
+            ({ try? Bool(from: $0) }),
+            ({ try? Int(from: $0) }),
+            ({ _ in 42 }),
         ]
     }
 }
