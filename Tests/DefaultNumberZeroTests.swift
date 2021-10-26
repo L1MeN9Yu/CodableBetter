@@ -72,7 +72,9 @@ class DefaultNumberZeroTests: XCTestCase {
         XCTAssertEqual(fixture.float, 0)
         XCTAssertEqual(fixture.float32, 0)
         XCTAssertEqual(fixture.float64, 0)
+        #if !os(Linux)
         XCTAssertEqual(fixture.cgfloat, 0)
+        #endif
         XCTAssertEqual(fixture.double, 0)
     }
 
@@ -107,7 +109,9 @@ class DefaultNumberZeroTests: XCTestCase {
         _fixture.float = 9.9
         _fixture.float32 = 10.10
         _fixture.float64 = 11.11
+        #if !os(Linux)
         _fixture.cgfloat = 12.12
+        #endif
         _fixture.double = 13.13
 
         let fixtureData = try JSONEncoder().encode(_fixture)
@@ -124,7 +128,9 @@ class DefaultNumberZeroTests: XCTestCase {
         XCTAssertEqual(fixture.float, 9.9)
         XCTAssertEqual(fixture.float32, 10.10)
         XCTAssertEqual(fixture.float64, 11.11)
+        #if !os(Linux)
         XCTAssertEqual(fixture.cgfloat, 12.12)
+        #endif
         XCTAssertEqual(fixture.double, 13.13)
     }
 
@@ -161,7 +167,9 @@ class DefaultNumberZeroTests: XCTestCase {
         XCTAssertEqual(fixture.float, 9.9)
         XCTAssertEqual(fixture.float32, 10.10)
         XCTAssertEqual(fixture.float64, 11.11)
+        #if !os(Linux)
         XCTAssertEqual(fixture.cgfloat, 12.12)
+        #endif
         XCTAssertEqual(fixture.double, 13.13)
     }
 }
